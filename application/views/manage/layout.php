@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="<?php echo media_url() ?>css/AdminLTE.min.css">
   <link rel="stylesheet" href="<?php echo media_url() ?>css/style.css">
   <link rel="stylesheet" href="<?php echo media_url() ?>css/load-font-googleapis.css">
+  <!-- Modern Admin Theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo media_url() ?>css/admin-modern.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
    folder instead of downloading all of them to reduce the load. -->
   <!-- Notyfy JS - Notification -->
@@ -48,7 +51,7 @@
   <script type="text/javascript" src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 </head>
 
-<body class="hold-transition skin-black-light fixed sidebar-mini" <?php echo isset($ngapp) ? $ngapp : null; ?>>
+<body class="hold-transition skin-black-light fixed sidebar-mini modern-admin" <?php echo isset($ngapp) ? $ngapp : null; ?>>
   <div class="wrapper">
 
     <header class="main-header">

@@ -36,9 +36,20 @@ function GetInt4d($data, $pos)
 
 class OLERead {
     var $data = '';
+    var $error = 0;
+    var $numBigBlockDepotBlocks = 0;
+    var $sbdStartBlock = 0;
+    var $rootStartBlock = 0;
+    var $extensionBlock = 0;
+    var $numExtensionBlocks = 0;
+    var $bigBlockChain = array();
+    var $smallBlockChain = array();
+    var $entry = '';
+    var $props = array();
+    var $wrkbook = 0;
+    var $rootentry = 0;
     
-    
-    function OLERead(){
+    function __construct(){
         
         
     }

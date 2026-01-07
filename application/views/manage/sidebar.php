@@ -23,60 +23,70 @@
         <li class="header">MENU</li>
         <li>
           <a href="<?php echo site_url('manage/profile'); ?>">
+            <i class="fa fa-user menu-icon"></i>
             <span>Profile</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/contact'); ?>">
+            <i class="fa fa-address-book menu-icon"></i>
             <span>Contact</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/client'); ?>">
+            <i class="fa fa-briefcase menu-icon"></i>
             <span>Client</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/interview'); ?>">
+            <i class="fa fa-microphone menu-icon"></i>
             <span>Interview</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/honour'); ?>">
+            <i class="fa fa-trophy menu-icon"></i>
             <span>Honor</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/illustration'); ?>">
+            <i class="fa fa-paint-brush menu-icon"></i>
             <span>Illustration</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/gallery'); ?>">
+            <i class="fa fa-image menu-icon"></i>
             <span>Gallery</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/blog'); ?>">
+            <i class="fa fa-pencil menu-icon"></i>
             <span>Blog</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/users'); ?>">
+            <i class="fa fa-users menu-icon"></i>
             <span>Data Admin</span>
             <span class="pull-right-container"></span>
           </a>
         </li>
         <li>
           <a href="<?php echo site_url('manage/auth/logout'); ?>">
+            <i class="fa fa-sign-out menu-icon"></i>
             <span>Logout</span>
             <span class="pull-right-container"></span>
           </a>

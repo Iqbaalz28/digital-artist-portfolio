@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2023 at 01:47 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Jan 07, 2026 at 12:00 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -111,13 +111,7 @@ INSERT INTO `galleries` (`id`, `img`, `uploaded_at`) VALUES
 (23, 'IF.jpg', '2023-11-10 03:51:05'),
 (24, 'Revina3.jpg', '2023-11-10 03:51:18'),
 (25, 'Revina2.jpg', '2023-11-10 03:51:26'),
-(26, 'Revina.jpg', '2023-11-10 03:51:35'),
-(27, 'TwoSides.jpg', '2023-12-02 00:43:42'),
-(28, 'Own.jpg', '2023-12-02 00:43:58'),
-(29, 'Amartha.jpg', '2023-12-02 00:44:18'),
-(30, 'Burn.jpg', '2023-12-02 00:44:30'),
-(31, 'Cae.jpg', '2023-12-02 00:44:51'),
-(32, 'Kad.jpg', '2023-12-02 00:45:32');
+(26, 'Revina.jpg', '2023-11-10 03:51:35');
 
 -- --------------------------------------------------------
 
@@ -317,7 +311,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `honours`

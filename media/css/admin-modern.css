@@ -1,0 +1,822 @@
+/* =================================
+   Modern Admin Theme - Dark Mode
+   Digital Artist Portfolio Admin
+   ================================= */
+
+/* CSS Variables - Matching main theme */
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: rgba(20, 20, 35, 0.9);
+    --accent-cyan: #00d4ff;
+    --accent-purple: #7c3aed;
+    --accent-pink: #f472b6;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --text-muted: #6b7280;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(0, 212, 255, 0.3);
+    --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.5);
+    --glow-purple: 0 0 20px rgba(124, 58, 237, 0.5);
+    --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --sidebar-width: 250px;
+    --header-height: 60px;
+}
+
+/* Base Reset & Body */
+body.modern-admin {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+body.modern-admin ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.modern-admin ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+body.modern-admin ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 4px;
+}
+
+body.modern-admin ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-purple), var(--accent-cyan));
+}
+
+/* ============================================
+   MAIN WRAPPER
+   ============================================ */
+body.modern-admin .wrapper {
+    background: var(--bg-primary);
+    min-height: 100vh;
+}
+
+/* ============================================
+   HEADER / NAVBAR
+   ============================================ */
+body.modern-admin .main-header {
+    background: transparent;
+    border: none;
+    max-height: var(--header-height);
+}
+
+body.modern-admin .main-header .logo {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--glass-border);
+    height: var(--header-height);
+    line-height: var(--header-height);
+}
+
+body.modern-admin .main-header .logo span {
+    color: var(--text-primary);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.modern-admin .main-header .navbar {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    min-height: var(--header-height);
+}
+
+body.modern-admin .main-header .sidebar-toggle {
+    color: var(--text-primary);
+    padding: 15px 20px;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .main-header .sidebar-toggle:hover {
+    color: var(--accent-cyan);
+    background: transparent;
+    text-shadow: var(--glow-cyan);
+}
+
+/* User Menu */
+body.modern-admin .user-menu > a {
+    color: var(--text-primary) !important;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .user-menu > a:hover {
+    background: var(--glass-bg) !important;
+}
+
+body.modern-admin .user-menu .user-image {
+    border: 2px solid var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
+}
+
+body.modern-admin .user-menu .dropdown-menu {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.modern-admin .user-menu .user-header {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)) !important;
+}
+
+body.modern-admin .user-menu .user-header p {
+    color: var(--text-primary) !important;
+}
+
+body.modern-admin .user-menu .user-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--glass-border);
+}
+
+body.modern-admin .user-menu .user-footer .btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .user-menu .user-footer .btn:hover {
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    color: var(--bg-primary);
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+body.modern-admin .main-sidebar {
+    background: var(--bg-secondary) !important;
+    border-right: 1px solid var(--glass-border);
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
+    padding-top: 0;
+    top: 0;
+}
+
+body.modern-admin .sidebar {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+/* User Panel */
+body.modern-admin .user-panel {
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    margin-top: 60px; /* Account for fixed header height */
+    display: flex;
+    align-items: center;
+}
+
+body.modern-admin .user-panel .image {
+    float: none !important;
+    flex-shrink: 0;
+}
+
+body.modern-admin .user-panel .image img {
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+                linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)) border-box;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+body.modern-admin .user-panel .info {
+    padding-left: 12px;
+    float: none !important;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+body.modern-admin .user-panel .info p {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.modern-admin .user-panel .info a {
+    color: var(--accent-cyan);
+    font-size: 11px;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .user-panel .info a:hover {
+    color: var(--accent-purple);
+    text-shadow: var(--glow-purple);
+}
+
+body.modern-admin .user-panel .info .fa-circle {
+    font-size: 8px;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 5px currentColor; }
+    50% { text-shadow: 0 0 15px currentColor; }
+}
+
+/* Sidebar Menu */
+body.modern-admin .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.modern-admin .sidebar-menu > li.header {
+    color: var(--accent-cyan);
+    background: transparent;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 15px 20px 10px;
+    border-bottom: none;
+}
+
+body.modern-admin .sidebar-menu > li > a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+body.modern-admin .sidebar-menu > li > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), transparent);
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .sidebar-menu > li > a:hover {
+    color: var(--text-primary);
+    background: transparent;
+    border-left-color: var(--accent-cyan);
+}
+
+body.modern-admin .sidebar-menu > li > a:hover::before {
+    opacity: 1;
+}
+
+body.modern-admin .sidebar-menu > li.active > a {
+    color: var(--accent-cyan);
+    background: var(--glass-bg);
+    border-left-color: var(--accent-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+body.modern-admin .sidebar-menu > li > a > .menu-icon {
+    width: 24px;
+    margin-right: 12px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--accent-cyan);
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .sidebar-menu > li > a:hover > .menu-icon {
+    transform: scale(1.1);
+    text-shadow: var(--glow-cyan);
+}
+
+/* ============================================
+   CONTENT WRAPPER
+   ============================================ */
+body.modern-admin .content-wrapper {
+    background: var(--bg-primary);
+    min-height: calc(100vh - var(--header-height) - 50px);
+}
+
+/* Content Header / Breadcrumb */
+body.modern-admin .content-header {
+    background: transparent;
+    padding: 20px 30px;
+}
+
+body.modern-admin .content-header > h1 {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 28px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.modern-admin .content-header > .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+body.modern-admin .content-header > .breadcrumb > li {
+    color: var(--text-secondary);
+}
+
+body.modern-admin .content-header > .breadcrumb > li > a {
+    color: var(--accent-cyan);
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .content-header > .breadcrumb > li > a:hover {
+    color: var(--accent-purple);
+}
+
+body.modern-admin .content-header > .breadcrumb > li + li::before {
+    color: var(--text-muted);
+}
+
+/* Main Content */
+body.modern-admin .content {
+    padding: 0 30px 30px 30px;
+}
+
+/* ============================================
+   BOX / CARD COMPONENTS
+   ============================================ */
+body.modern-admin .box {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+body.modern-admin .box:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+body.modern-admin .box-header {
+    background: transparent;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 20px 25px;
+}
+
+body.modern-admin .box-header .box-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+body.modern-admin .box-body {
+    padding: 25px 30px;
+}
+
+body.modern-admin .box-footer {
+    background: var(--glass-bg);
+    border-top: 1px solid var(--glass-border);
+    padding: 15px 20px;
+}
+
+/* ============================================
+   TABLES & DATATABLES
+   ============================================ */
+body.modern-admin .table {
+    color: var(--text-primary);
+    margin-bottom: 0;
+    background: transparent;
+}
+
+body.modern-admin .table > thead > tr > th {
+    background: var(--glass-bg);
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 12px;
+}
+
+body.modern-admin .table > tbody > tr {
+    transition: var(--transition-fast);
+    background: var(--bg-secondary) !important;
+}
+
+body.modern-admin .table > tbody > tr:hover {
+    background: var(--glass-bg) !important;
+}
+
+body.modern-admin .table > tbody > tr > td {
+    color: var(--text-primary) !important;
+    border-top: 1px solid var(--glass-border);
+    padding: 12px;
+    vertical-align: middle;
+    background: transparent;
+}
+
+body.modern-admin .table > tbody > tr:hover > td {
+    color: var(--accent-cyan) !important;
+}
+
+body.modern-admin .table-striped > tbody > tr:nth-of-type(odd) {
+    background: var(--bg-card) !important;
+}
+
+body.modern-admin .table-bordered {
+    border: 1px solid var(--glass-border);
+}
+
+body.modern-admin .table-bordered > thead > tr > th,
+body.modern-admin .table-bordered > thead > tr > td,
+body.modern-admin .table-bordered > tbody > tr > th,
+body.modern-admin .table-bordered > tbody > tr > td {
+    border: 1px solid var(--glass-border);
+}
+
+/* DataTables Specific */
+body.modern-admin .dataTables_wrapper {
+    color: var(--text-secondary);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+body.modern-admin .dataTables_length,
+body.modern-admin .dataTables_filter,
+body.modern-admin .dataTables_info {
+    color: var(--text-secondary);
+    padding: 15px 5px;
+}
+
+body.modern-admin .dataTables_length select,
+body.modern-admin .dataTables_filter input {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    padding: 8px 12px;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .dataTables_length select:focus,
+body.modern-admin .dataTables_filter input:focus {
+    border-color: var(--accent-cyan);
+    outline: none;
+    box-shadow: var(--glow-cyan);
+}
+
+body.modern-admin .dataTables_paginate {
+    padding: 15px 0;
+}
+
+body.modern-admin .dataTables_paginate .paginate_button {
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 8px !important;
+    color: var(--text-secondary) !important;
+    margin: 0 3px;
+    padding: 8px 14px !important;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .dataTables_paginate .paginate_button:hover {
+    background: var(--accent-cyan) !important;
+    border-color: var(--accent-cyan) !important;
+    color: var(--bg-primary) !important;
+}
+
+body.modern-admin .dataTables_paginate .paginate_button.current {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)) !important;
+    border-color: transparent !important;
+    color: var(--text-primary) !important;
+    font-weight: 600;
+}
+
+body.modern-admin .dataTables_paginate .paginate_button.disabled {
+    opacity: 0.4;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+body.modern-admin .form-control {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    padding: 12px 16px;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .form-control:focus {
+    background: var(--bg-secondary);
+    border-color: var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
+    color: var(--text-primary);
+}
+
+body.modern-admin .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+body.modern-admin label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+body.modern-admin .form-group {
+    margin-bottom: 20px;
+}
+
+/* Select2 Styling */
+body.modern-admin .select2-container--default .select2-selection--single {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    height: 44px;
+    padding: 6px 12px;
+}
+
+body.modern-admin .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--text-primary);
+    line-height: 30px;
+}
+
+body.modern-admin .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 42px;
+}
+
+body.modern-admin .select2-dropdown {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.modern-admin .select2-results__option {
+    color: var(--text-secondary);
+    padding: 10px 15px;
+}
+
+body.modern-admin .select2-results__option--highlighted {
+    background: var(--accent-cyan) !important;
+    color: var(--bg-primary);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+body.modern-admin .btn {
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: var(--transition-fast);
+    border: none;
+}
+
+body.modern-admin .btn-primary {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: var(--text-primary);
+}
+
+body.modern-admin .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+}
+
+body.modern-admin .btn-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+body.modern-admin .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+body.modern-admin .btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+body.modern-admin .btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+body.modern-admin .btn-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: var(--bg-primary);
+}
+
+body.modern-admin .btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+body.modern-admin .btn-info {
+    background: linear-gradient(135deg, var(--accent-cyan), #0ea5e9);
+}
+
+body.modern-admin .btn-info:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-cyan);
+}
+
+body.modern-admin .btn-default {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+}
+
+body.modern-admin .btn-default:hover {
+    background: var(--glass-bg);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+body.modern-admin .btn-flat {
+    border-radius: 8px;
+}
+
+/* ============================================
+   ALERTS & NOTIFICATIONS
+   ============================================ */
+body.modern-admin .alert {
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+}
+
+body.modern-admin .alert-success {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border-left: 4px solid #10b981;
+}
+
+body.modern-admin .alert-danger {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border-left: 4px solid #ef4444;
+}
+
+body.modern-admin .alert-warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border-left: 4px solid #f59e0b;
+}
+
+body.modern-admin .alert-info {
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--accent-cyan);
+    border-left: 4px solid var(--accent-cyan);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+body.modern-admin .main-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 15px 30px;
+}
+
+body.modern-admin .main-footer a {
+    color: var(--accent-cyan);
+}
+
+/* ============================================
+   LABELS & BADGES
+   ============================================ */
+body.modern-admin .label {
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+body.modern-admin .label-primary {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+}
+
+body.modern-admin .label-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+body.modern-admin .label-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+body.modern-admin .label-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: var(--bg-primary);
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+body.modern-admin .modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+body.modern-admin .modal-header {
+    background: transparent;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 20px;
+}
+
+body.modern-admin .modal-title {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+body.modern-admin .modal-body {
+    padding: 25px;
+}
+
+body.modern-admin .modal-footer {
+    background: var(--glass-bg);
+    border-top: 1px solid var(--glass-border);
+    padding: 15px 20px;
+}
+
+body.modern-admin .close {
+    color: var(--text-secondary);
+    opacity: 1;
+    text-shadow: none;
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .close:hover {
+    color: var(--accent-cyan);
+}
+
+/* ============================================
+   IMAGES IN TABLE
+   ============================================ */
+body.modern-admin .table img {
+    border-radius: 8px;
+    border: 2px solid var(--glass-border);
+    transition: var(--transition-fast);
+}
+
+body.modern-admin .table img:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+body.modern-admin .jq-toast-wrap {
+    z-index: 9999;
+}
+
+body.modern-admin .jq-toast-single {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    body.modern-admin .content-header > h1 {
+        font-size: 22px;
+    }
+    
+    body.modern-admin .content {
+        padding: 0 15px 20px;
+    }
+    
+    body.modern-admin .box {
+        border-radius: 12px;
+    }
+}
